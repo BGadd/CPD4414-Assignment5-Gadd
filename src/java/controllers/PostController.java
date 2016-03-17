@@ -82,7 +82,7 @@ public class PostController {
         int id = post.getId();
         retrievePosts();
         post = getPostById(id);
-        return "viewPost";
+        return "index";
     }
     public String savePost(User user) {
         try (Connection connection = DatabaseUtilities.connect()) {

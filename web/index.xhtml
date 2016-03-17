@@ -8,9 +8,15 @@
         <link rel="stylesheet" href="style.css" />
     </h:head>
     <h:body>
-        <h1>
-            The Blog
-        </h1>
+        <table>
+            <tr>
+                <td>
+                    <h1>
+                        The Blog
+                    </h1>
+                </td>
+            </tr>
+        </table>
         <h:form>
             <h:dataTable value="#{postController.posts}" var="post">
                 <h:column>
