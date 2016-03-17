@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-Mar-2016, 3:25:21 PM
+    Author     : c0641903
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 32px;
+    background-color: lightblue;
+}
+table {
+    background-color: lightblue;
+    margin-bottom: 12px;
+}
+tr {
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: lightcyan;
+}

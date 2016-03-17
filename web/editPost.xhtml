@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>#{postController.post.title}</title>
+        <link rel="stylesheet" href="style.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <c:if test="#{login.getStatus()}">
+                <table>
+                    <tr>
+                        <td>
+                            <h3>
+                                Title
+                            </h3>
+                        </td>
+                        <td>
+                            <h3>
+                                <h:inputText value="#{postController.post.title}" />
+                            </h3>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <h:inputTextarea value="#{postController.post.contents}" />
+                        </td>
+                    </tr>
+                </table>
+                <h:commandButton value="Save" action="#{postController.savePost(login.user)}" />
+            </c:if>
+            <c:if test="#{!login.getStatus()}">
+                <h1>
+                    You are not logged in.
+                </h1>
+            </c:if>
+            <h:commandButton value="Cancel" action="#{postController.cancelPost()}" />
+        </h:form>
+        <c:if test="#{login.getStatus()}">
+            <h3>
+                You are logged in.
+            </h3>
+        </c:if>
+    </h:body>
+</html>
+

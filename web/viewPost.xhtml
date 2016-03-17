@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>#{postController.post.title}</title>
+        <link rel="stylesheet" href="style.css" />
+    </h:head>
+    <h:body>
+        <table>
+            <tr>
+                <td>
+                    <h1>
+                        #{postController.post.title}
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>
+                        By #{userController.getUsernameById(postController.post.userId)}
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <h3>#{postController.post.createdTime}</h3>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        #{postController.post.contents}
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <h:form>
+            <c:if test="#{login.getStatus()}">
+                <h:commandButton value="Edit" action="#{postController.editPost()}" />
+                <h:commandButton value="Delete" action="#{postController.deletePost()}" />
+            </c:if>
+            <c:if test="#{!login.getStatus()}">
+                <h:commandButton value="Log In" action="login" />
+            </c:if>
+            <h:commandButton value="Return" action="index" />
+        </h:form>
+        <c:if test="#{login.getStatus()}">
+            <h3>
+                You are logged in.
+            </h3>
+        </c:if>
+    </h:body>
+</html>
+
